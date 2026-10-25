@@ -72,7 +72,7 @@ async function shortenUrl(req, res, next) {
     return res.status(201).json({
       originalUrl: savedUrl.original_url,
       shortCode: savedUrl.short_code,
-      shortUrl: `${req.protocol}://${req.get('host')}/${savedUrl.short_code}`,
+      shortUrl: `https://snip-url-mu.vercel.app/${savedUrl.short_code}`,
     });
   } catch (error) {
     next(error);

@@ -13,9 +13,6 @@ function Footer() {
         </p>
 
         <div className="footer-bottom">
-          <p>
-            &copy; {year} SnipURL. Built with React, Express & PostgreSQL.
-          </p>
 
           <a
             href="https://github.com/pavithranscs25/URL-Shortener"

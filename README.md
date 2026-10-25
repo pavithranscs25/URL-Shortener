@@ -1,16 +1,18 @@
-# SnipURL 🔗
+# SnipURL — URL Shortener
 
-A full-stack URL shortener that converts long URLs into short links and redirects users to their original destinations.
+A full-stack URL shortener built with React, Node.js, Express, and PostgreSQL. Convert long URLs into short links and redirect users to the original destination with ease.
+
+🔗 **Live Demo:** [SnipURL](https://snip-url-mu.vercel.app/)
 
 ## ✨ Features
 
 - Shorten long URLs into compact links.
-- Store short codes and original URLs in PostgreSQL.
-- Redirect users to the original URL.
-- Validate URL formats and allow only HTTP/HTTPS URLs.
-- Handle unknown short codes with a 404 response.
-- Track link clicks.
-- Retry short-code generation when a duplicate code is encountered.
+- Redirect short links to their original URLs.
+- Store URL mappings in a PostgreSQL database.
+- Track the number of clicks on shortened URLs.
+- Validate URLs and handle invalid requests.
+- Responsive frontend interface.
+- Deployed frontend and backend.
 
 ## 🛠️ Tech Stack
 
@@ -23,68 +25,61 @@ A full-stack URL shortener that converts long URLs into short links and redirect
 **Backend**
 - Node.js
 - Express.js
-- PostgreSQL
-- Neon
+- REST API
 
-## 📁 Project Structure
+**Database**
+- PostgreSQL (Neon)
 
-```text
-SnipURL/
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── routes/
-│   ├── server.js
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-└── README.md
-```
+**Deployment**
+- Vercel
 
-## ⚙️ Getting Started
+## ⚙️ How It Works
+
+1. Enter a long URL in SnipURL.
+2. The frontend sends a request to the backend API.
+3. The backend validates the URL and generates a short code.
+4. The URL mapping is stored in PostgreSQL.
+5. Open the generated short link to redirect to the original URL.
+
+## 🚀 Run Locally
 
 ### Prerequisites
 
 - Node.js and npm
-- A PostgreSQL database (Neon can be used)
+- A PostgreSQL database (or a Neon database)
 
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd SnipURL
+git clone https://github.com/pavithranscs25/URL-Shortener.git
+cd URL-Shortener
 ```
 
-### 2. Configure the backend
+### 2. Set up the backend
 
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file inside the `backend/` directory:
+Create a `.env` file inside the `backend` directory:
 
 ```env
-PORT=3000
 DATABASE_URL=your_postgresql_connection_string
+PORT=3000
 ```
 
-Replace the database connection string with your own Neon PostgreSQL connection string. Never commit your `.env` file or expose database credentials.
-
-### 3. Start the backend
+Start the backend:
 
 ```bash
 node server.js
 ```
 
-The backend runs at `http://localhost:3000`.
+The backend runs locally at `http://localhost:3000`.
 
-### 4. Start the frontend
+### 3. Set up the frontend
 
-Open another terminal:
+Open a new terminal:
 
 ```bash
 cd frontend
@@ -92,24 +87,30 @@ npm install
 npm run dev
 ```
 
-Open the local URL displayed by Vite in your terminal, usually `http://localhost:5173`.
+Open the local URL displayed by Vite in your terminal.
 
-## 🔄 How It Works
+> Note: The frontend API configuration must point to your local backend (`http://localhost:3000`) when running locally. The deployed frontend uses the deployed backend URL.
 
-1. Enter a long URL in the frontend.
-2. The frontend sends a request to the backend API.
-3. The backend validates the URL and generates a short code.
-4. The short code and original URL are saved in PostgreSQL.
-5. Opening the short link redirects the user to the original destination.
-6. Each successful redirect increments the click count.
+## 🔐 Environment Variables
 
-## 🚀 Future Improvements
+| Variable | Description |
+|---|---|
+| `DATABASE_URL` | PostgreSQL connection string |
+| `PORT` | Local backend port; defaults to `3000` |
 
-- Deploy the frontend and backend.
-- Display click analytics in the frontend.
-- Support custom short links.
-- Add link expiration options.
+**Security:** Never commit `.env` files, database credentials, or other secrets to GitHub.
 
-## 📄 License
+## 🌐 Live Deployment
 
-A license has not been selected yet.
+- **Frontend:** [snip-url-mu.vercel.app](https://snip-url-mu.vercel.app/)
+- **Backend:** [snip-url-backend-zeta.vercel.app](https://snip-url-backend-zeta.vercel.app/)
+
+## 👨‍💻 Author
+
+**Pavithran S**
+
+- GitHub: [@pavithranscs25](https://github.com/pavithranscs25)
+
+---
+
+Built as a full-stack web development project to learn REST APIs, database integration, and deployment.

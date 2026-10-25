@@ -1,5 +1,4 @@
-
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://snip-url-backend-zeta.vercel.app';
 
 export async function shortenUrl(longUrl) {
   const response = await fetch(`${API_BASE_URL}/api/shorten`, {

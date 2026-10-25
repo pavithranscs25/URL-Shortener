@@ -1,26 +1,17 @@
-function Footer() {
-  const year = new Date().getFullYear();
+function Footer() { 
 
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <a className="footer-logo" href="/">
+        <h1 className="footer-logo" href="/">
           Snip<span>URL</span>
-        </a>
+        </h1>
 
         <p className="footer-description">
           Short links. Simple sharing.
         </p>
 
         <div className="footer-bottom">
-
-          <a
-            href="https://github.com/pavithranscs25/URL-Shortener"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View source on GitHub ↗
-          </a>
         </div>
       </div>
     </footer>

@@ -1,0 +1,9 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/:code",
+      "destination": "https://snip-url-backend-zeta.vercel.app/:code"
+    }
+  ]
+}
